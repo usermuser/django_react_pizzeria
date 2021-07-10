@@ -10,7 +10,7 @@ class Pizzeria(models.Model):
     zip_code = models.IntegerField(blank=True, default=0)
     website = models.URLField(max_length=420, blank=True)
     phone_number = models.CharField(
-        validators=[RegexValidator(regex=r'^1\?\d{9,10}$')],
+        validators=[RegexValidator(regex=r'\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})')],
         max_length=10,
         blank=True
     )
@@ -22,3 +22,6 @@ class Pizzeria(models.Model):
     )
     email = models.EmailField(max_length=245, blank=True)
     active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f'{self.pizzeria_name}, {self.city}'
