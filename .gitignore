@@ -1,0 +1,4 @@
+/.venv/
+/.idea/
+/pizzaproject/db.sqlite3
+/pizzaproject/pizzaproject/settings_local.py
