@@ -14,15 +14,12 @@ class PizzaList extends Component {
         this.showPizzeriaDetails = this.showPizzeriaDetails.bind(this);
     }
 
-    state = {
-        pizzeriasData: []
-    }
-
     getPizzaDetail(item) {
         axios
-            .get('http://127.0.0.1:8000/'.concat(item.get_absolute_url))
+            .get("http://127.0.0.1:8000/".concat(item.get_absolute_url))
             .then((response) => {
-                this.setState({pizzeria: response.data})
+                console.log('absolute_url:', item.get_absolute_url)
+                this.setState({pizzeria: response.data});
             })
             .catch(function (error) {
                 console.log(error);
