@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from "axios";
 import PizzaDetail from "./pizzeriadetail";
+import PizzaForm from "./pizzeriaform";
 
 class PizzaList extends Component {
     constructor(props) {
@@ -43,6 +44,7 @@ class PizzaList extends Component {
     render() {
         return (
             <div>
+                <PizzaForm />
                 {this.state.pizzeriasData.map(item => {
                     return (
                         <h3 key={item.id} onClick={() => this.showPizzeriaDetails(item)}>
